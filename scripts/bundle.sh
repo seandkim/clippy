@@ -15,7 +15,7 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <plist version="1.0">
 <dict>
   <key>CFBundleName</key><string>Clippy</string>
-  <key>CFBundleIdentifier</key><string>dev.merge.clippy</string>
+  <key>CFBundleIdentifier</key><string>com.seandkim.clippy</string>
   <key>CFBundleExecutable</key><string>Clippy</string>
   <key>CFBundlePackageType</key><string>APPL</string>
   <key>CFBundleShortVersionString</key><string>1.0</string>
