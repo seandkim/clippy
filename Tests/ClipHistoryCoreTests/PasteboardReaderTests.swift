@@ -7,7 +7,7 @@ struct PasteboardReaderTests {
     private let concealedType = NSPasteboard.PasteboardType("org.nspasteboard.ConcealedType")
 
     private func scratchPasteboard() -> NSPasteboard {
-        NSPasteboard(name: NSPasteboard.Name("clipbar-test-\(UUID().uuidString)"))
+        NSPasteboard(name: NSPasteboard.Name("clippy-test-\(UUID().uuidString)"))
     }
 
     private func tinyPNG(w: Int, h: Int) -> Data {

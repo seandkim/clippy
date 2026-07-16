@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "ClipBar",
+    name: "Clippy",
     platforms: [.macOS(.v13)],
     targets: [
         .target(name: "ClipHistoryCore"),
-        .executableTarget(name: "ClipBar", dependencies: ["ClipHistoryCore"]),
+        .executableTarget(name: "Clippy", dependencies: ["ClipHistoryCore"]),
         .testTarget(name: "ClipHistoryCoreTests", dependencies: ["ClipHistoryCore"]),
     ]
 )

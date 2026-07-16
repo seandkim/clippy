@@ -2,19 +2,19 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-BIN="$(pwd)/ClipBar.app/Contents/MacOS/ClipBar"
+BIN="$(pwd)/Clippy.app/Contents/MacOS/Clippy"
 if [[ ! -x "$BIN" ]]; then
-  echo "ClipBar.app not found — run scripts/bundle.sh first." >&2
+  echo "Clippy.app not found — run scripts/bundle.sh first." >&2
   exit 1
 fi
 
-PLIST="$HOME/Library/LaunchAgents/dev.merge.clipbar.plist"
+PLIST="$HOME/Library/LaunchAgents/dev.merge.clippy.plist"
 cat > "$PLIST" <<PL
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key><string>dev.merge.clipbar</string>
+  <key>Label</key><string>dev.merge.clippy</string>
   <key>ProgramArguments</key><array><string>$BIN</string></array>
   <key>RunAtLoad</key><true/>
   <key>KeepAlive</key><false/>

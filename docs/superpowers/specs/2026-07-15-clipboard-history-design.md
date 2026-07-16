@@ -1,9 +1,9 @@
-# ClipBar — Menu Bar Clipboard History (Design)
+# Clippy — Menu Bar Clipboard History (Design)
 
 Date: 2026-07-15
 Status: Approved (brainstorming)
 
-> `ClipBar` is a placeholder name; trivially changeable later.
+> `Clippy` is a placeholder name; trivially changeable later.
 
 ## Purpose
 
@@ -121,17 +121,17 @@ clipboard-history/                 # SwiftPM package (git repo root)
   Package.swift
   Sources/
     ClipHistoryCore/               # Entry, HistoryStore, classification, masking (pure logic)
-    ClipBar/                       # AppDelegate, ClipboardMonitor, MenuController, main.swift (AppKit glue)
+    Clippy/                       # AppDelegate, ClipboardMonitor, MenuController, main.swift (AppKit glue)
   Tests/
     ClipHistoryCoreTests/          # unit tests: caps, dedup-to-top, expiry, masking classification
   scripts/
-    bundle.sh                      # wrap built binary into ClipBar.app (+ Info.plist, LSUIElement)
+    bundle.sh                      # wrap built binary into Clippy.app (+ Info.plist, LSUIElement)
     install-login-item.sh          # OPTIONAL launch-at-login via LaunchAgent plist
   docs/superpowers/specs/          # this spec
 ```
 
 Build/test from the command line (no full Xcode required):
-`swift build`, `swift test`, then `scripts/bundle.sh` to produce `ClipBar.app`.
+`swift build`, `swift test`, then `scripts/bundle.sh` to produce `Clippy.app`.
 
 ## Testing strategy
 

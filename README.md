@@ -1,4 +1,4 @@
-# ClipBar
+# Clippy
 
 A tiny, dependency-free macOS menu bar clipboard history. Keeps the last 10
 copies (max 1 hour) **in memory only** — nothing is written to disk.
@@ -7,11 +7,11 @@ copies (max 1 hour) **in memory only** — nothing is written to disk.
 
 ```
 swift test          # run the core unit tests
-scripts/bundle.sh   # produce ClipBar.app
-open ClipBar.app    # launch (📋 appears in the menu bar)
+scripts/bundle.sh   # produce Clippy.app
+open Clippy.app    # launch (📋 appears in the menu bar)
 ```
 
-During development you can also just `swift run ClipBar` (Ctrl-C to stop).
+During development you can also just `swift run Clippy` (Ctrl-C to stop).
 
 ## Use
 
