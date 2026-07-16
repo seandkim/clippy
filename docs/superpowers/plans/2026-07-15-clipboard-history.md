@@ -6,7 +6,17 @@
 
 **Architecture:** A Swift Package with two targets. `ClipHistoryCore` (library) holds all logic — the `ClipContent` model, the `HistoryStore` (caps/dedup/expiry), and `PasteboardReader` (NSPasteboard ↔ `ClipContent`) — and is fully unit-tested headlessly. `ClipBar` (executable) is thin AppKit glue: a polling `ClipboardMonitor` and an `NSStatusItem`-based `MenuController`. A shell script wraps the built binary into a menu-bar-only `.app`.
 
-**Tech Stack:** Swift 5.9, SwiftPM, AppKit, XCTest. Zero third-party dependencies. macOS 13+.
+**Tech Stack:** Swift 5.9, SwiftPM, AppKit, Swift Testing. Zero third-party dependencies. macOS 13+.
+
+> **Implementation note (deviation from as-written test snippets):** The test
+> code blocks below were authored for XCTest. During execution we found that
+> Command Line Tools ships `Testing.framework` but **not** `XCTest.framework`,
+> so `import XCTest` cannot compile without full Xcode. All tests were therefore
+> written with **Swift Testing** instead (`import Testing`, `struct` suites,
+> `@Test` funcs, `#expect(...)`) — a mechanical swap with no design impact. One
+> extra fix: `#expect([w,h] == [2,3])` is ambiguous with Foundation imported
+> (`IndexSet`/`IndexPath`), so image-dimension asserts compare scalars
+> individually. The committed tests are the source of truth.
 
 ## Global Constraints
 
