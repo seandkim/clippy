@@ -11,7 +11,16 @@ final class MenuController: NSObject, NSMenuDelegate {
         self.store = store
         self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         super.init()
-        statusItem.button?.title = "📋"
+        if let button = statusItem.button {
+            // Native monochrome menu-bar glyph that adapts to light/dark.
+            if let image = NSImage(systemSymbolName: "paperclip",
+                                   accessibilityDescription: "Clippy clipboard history") {
+                image.isTemplate = true
+                button.image = image
+            } else {
+                button.title = "📎" // fallback if the SF Symbol is unavailable
+            }
+        }
         let menu = NSMenu()
         menu.delegate = self
         statusItem.menu = menu
