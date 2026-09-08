@@ -2,9 +2,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-BIN="$(pwd)/Clippy.app/Contents/MacOS/Clippy"
+BIN="/Applications/Clippy.app/Contents/MacOS/Clippy"
+[[ -x "$BIN" ]] || BIN="$(pwd)/Clippy.app/Contents/MacOS/Clippy"
 if [[ ! -x "$BIN" ]]; then
-  echo "Clippy.app not found — run scripts/bundle.sh first." >&2
+  echo "Clippy.app not found — run scripts/install.sh first." >&2
   exit 1
 fi
 
